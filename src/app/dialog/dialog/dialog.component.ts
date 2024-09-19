@@ -1,8 +1,8 @@
-import { Component, Inject, inject, model, signal } from '@angular/core';
+import { Component, Inject, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
-import { PeriodicElement } from '../../table/table/table.component';
 import { MatFormField, MatLabel } from '@angular/material/form-field';
+import { PeriodicElement } from '../../interfaces/periodicElement.interface';
 import {
   MAT_DIALOG_DATA,
   MatDialogActions,
@@ -10,6 +10,7 @@ import {
   MatDialogContent,
   MatDialogRef,
 } from '@angular/material/dialog';
+
 
 
 @Component({
