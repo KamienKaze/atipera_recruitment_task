@@ -1,7 +1,9 @@
-import { Component } from '@angular/core';
-import {MatTableModule} from '@angular/material/table';
+import { Component, inject, model, signal } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { MatTableModule } from '@angular/material/table';
+import { DialogComponent } from '../../dialog/dialog/dialog.component';
 
-export interface PeriodicElement {
+export type PeriodicElement = {
   name: string;
   position: number;
   weight: number;
@@ -31,4 +33,12 @@ const ELEMENT_DATA: PeriodicElement[] = [
 export class TableComponent {
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   dataSource = ELEMENT_DATA;
+  readonly dialog = inject(MatDialog);
+
+  logElementName(element: PeriodicElement): void {
+
+    let dialogRef = this.dialog.open(DialogComponent, {
+      data: { element: element },
+    });
+  }
 }

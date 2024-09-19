@@ -1,0 +1,22 @@
+<mat-dialog-content>
+    <mat-form-field>
+        <mat-label>Element Position</mat-label>
+        <input matInput [(ngModel)]="position" />
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Element Name</mat-label>
+        <input matInput [(ngModel)]="name" />
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Element Weight</mat-label>
+        <input matInput [(ngModel)]="weight" />
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Element Symbol</mat-label>
+        <input matInput [(ngModel)]="symbol" />
+    </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">Cancel</button>
+    <button mat-button [mat-dialog-close]="onDialogClosed()" cdkFocusInitial>Ok</button>
+</mat-dialog-actions>
